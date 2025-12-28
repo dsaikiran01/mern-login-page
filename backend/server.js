@@ -17,6 +17,11 @@ app.use("/api/auth", authRoutes);
 // DB + Server
 connectDB();
 
+// health test endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ message: 'Service is up and running!' });
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
