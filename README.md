@@ -103,6 +103,67 @@ npm run dev
 Open your browser at `http://localhost:5173` (or Vite-provided URL).
 
 
+## 🔑 API Endpoints
+
+### 1. Health Check
+
+**GET** `/health`
+
+Endpoint to verify if the server is operating correctly.
+
+### 2. Register User
+
+**POST** `/api/auth/register`
+
+Registers a new user in the database with a hashed password.
+
+**Request Body:**
+
+```json
+{
+  "email": "test@example.com",
+  "password": "123456"
+}
+```
+
+or use cURL command:
+
+```bash
+curl -X POST http://localhost:5000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "test@example.com",
+    "password": "123456"
+  }'
+```
+
+### 3. User Login
+
+**POST** `/api/auth/login`
+
+Authenticates a user and returns a success message if the credentials are valid.
+
+**Request Body:**
+
+```json
+{
+  "email": "test@example.com",
+  "password": "123456"
+}
+````
+
+or use cURL command:
+
+```bash
+curl -X POST http://localhost:5000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "test@example.com",
+    "password": "123456"
+  }'
+```
+
+
 ## 🔑 Usage
 
 1. Register a user using the backend API (Postman / Thunder Client)
