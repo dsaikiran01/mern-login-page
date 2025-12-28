@@ -15,8 +15,9 @@ const Login = () => {
     setMessage("");
 
     try {
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/auth/login`,
+        `${API_URL}/api/auth/login`,
         {
           method: "POST",
           headers: {
